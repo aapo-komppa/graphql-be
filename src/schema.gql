@@ -1,0 +1,41 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Chart {
+  _id: String!
+  colour: String!
+  name: String!
+  values: [Float!]!
+}
+
+input CreateChartsDto {
+  colour: String!
+  name: String!
+  values: [Float!]!
+}
+
+input ListChartsDto {
+  _id: String
+  colour: String
+  name: String
+  values: [Float!]
+}
+
+type Mutation {
+  createPerson(payload: CreateChartsDto!): Chart!
+  deletePerson(_id: String!): Chart!
+  updatePerson(payload: UpdateChartsDto!): Chart!
+}
+
+type Query {
+  person(_id: String!): Chart!
+  persons(filters: ListChartsDto): [Chart!]!
+}
+
+input UpdateChartsDto {
+  _id: String!
+  colour: String
+  name: String
+  values: [Float!]
+}
