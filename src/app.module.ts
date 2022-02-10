@@ -20,6 +20,10 @@ import { ConfigModule } from '@nestjs/config';
       sortSchema: true,
       playground: true,
       debug: false,
+      cors: {
+        credentials: true,
+        origin: [process.env.FRONTEND_HOST],
+      },
     }),
     ChartsModule,
   ],

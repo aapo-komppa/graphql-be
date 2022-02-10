@@ -9,29 +9,29 @@ export class ChartsResolver {
   constructor(private chartService: ChartsService) {}
 
   @Query(() => Chart)
-  async person(
+  async chart(
     @Args('_id', { type: () => String }) _id: MongooseSchema.Types.ObjectId,
   ) {
     return this.chartService.getById(_id);
   }
 
   @Query(() => [Chart])
-  async persons(@Args('filters', { nullable: true }) filters?: ListChartsDto) {
+  async charts(@Args('filters', { nullable: true }) filters?: ListChartsDto) {
     return this.chartService.list(filters);
   }
 
   @Mutation(() => Chart)
-  async createPerson(@Args('payload') payload: CreateChartsDto) {
+  async createChart(@Args('payload') payload: CreateChartsDto) {
     return this.chartService.create(payload);
   }
 
   @Mutation(() => Chart)
-  async updatePerson(@Args('payload') payload: UpdateChartsDto) {
+  async updateChart(@Args('payload') payload: UpdateChartsDto) {
     return this.chartService.update(payload);
   }
 
   @Mutation(() => Chart)
-  async deletePerson(
+  async deleteChart(
     @Args('_id', { type: () => String }) _id: MongooseSchema.Types.ObjectId,
   ) {
     return this.chartService.delete(_id);

@@ -23,14 +23,14 @@ input ListChartsDto {
 }
 
 type Mutation {
-  createPerson(payload: CreateChartsDto!): Chart!
-  deletePerson(_id: String!): Chart!
-  updatePerson(payload: UpdateChartsDto!): Chart!
+  createChart(payload: CreateChartsDto!): Chart!
+  deleteChart(_id: String!): Chart!
+  updateChart(payload: UpdateChartsDto!): Chart!
 }
 
 type Query {
-  person(_id: String!): Chart!
-  persons(filters: ListChartsDto): [Chart!]!
+  chart(_id: String!): Chart!
+  charts(filters: ListChartsDto): [Chart!]!
 }
 
 input UpdateChartsDto {
