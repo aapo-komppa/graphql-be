@@ -4,7 +4,6 @@ import { join } from 'path';
 import { GraphQLModule } from '@nestjs/graphql';
 
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 
 import { ChartsModule } from './models/charts/charts.module';
 import { ConfigModule } from '@nestjs/config';
@@ -28,6 +27,6 @@ import { ConfigModule } from '@nestjs/config';
     ChartsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}
