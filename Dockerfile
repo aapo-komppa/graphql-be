@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run start
+RUN npm run build
 
 FROM node:14-alpine As production
 

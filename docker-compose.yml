@@ -3,7 +3,6 @@ version: '3.8'
 services:
   dev:
     container_name: nestjs_api_dev
-    image: nestjs-api-dev:1.0.0
     build:
       context: .
       target: development
@@ -34,6 +33,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${DB_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${DB_PASSWORD}
       MONGO_INITDB_DATABASE: ${DB_NAME}
+    ports:
+      - 27017:27017
     volumes:
       - mongo-database-data:/data/db
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
